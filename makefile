@@ -12,7 +12,7 @@ utils.o: utils.hpp utils.cpp
 	$(CC) -c utils.cpp
 
 tidy :
-	rm -f utils.o cllist.o core
+	rm -f utils.o sllist.o core
 
 clean :
-	rm -f parts4 utils.o cllist.o core
+	rm -f parts4 utils.o sllist.o core
