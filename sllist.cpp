@@ -5,7 +5,6 @@
 // Last Changed: March 21, 2015
 
 #include "sllist.hpp"
-#include <iostream>
 
 Partlist::Partlist() {
     m_first = NULL;
@@ -13,7 +12,7 @@ Partlist::Partlist() {
 }
 
 Partlist::~Partlist() {
-    //TODO
+    //TODO soon
 }
 
 // return pointer to first element of list
@@ -68,7 +67,7 @@ void Partlist::add(Part part) {
 
 // returns true if list is empty
 bool Partlist::is_empty() {
-    return m_first == NULL ? true : false;
+    return (m_first == NULL);
 }
 
 // create new element for the list with fields copied
