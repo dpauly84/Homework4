@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <cstdlib>
 #include "sllist.hpp"
 #include "parts4.hpp"
@@ -9,7 +11,7 @@ using namespace std;
 int main() {
 
 //change
-    Partlist(partlist);
+    Partlist partlist;
 
     Part p1 = {"antenna", "4553-02", 1.98, "A123", "B021", 12};
     Part p2 = {"ratchet", "2347-01", 0.8725, "A007", "B021", 12};
@@ -17,10 +19,35 @@ int main() {
     Part p4 = {"pin", "5637-03", 0.0351, "A007", "B010", 12};
     Part p5 = {"pin", "5637-03", 0.0351, "A007", "B010", 12};
 
-
+    partlist.add(p1);
+    partlist.add(p2);
+    partlist.add(p3);
+    partlist.add(p4);
+    delete_part("4553-02", partlist);
+    print_partlist(cout, partlist);
     return 0;
 }
 
+// Read part file and stores Part structure data into a Part array
+int get_part_data_from_file(ifstream &inFile, Partlist &p);
+
+// Sends string parameter line to a Stringstream
+// Extracts  and stores Part structure data from Stringstream
+// Returns Part structure
+Part read_part_record(std::string line);
+
+// Reads a certain amount of characters (length) from the stringstream
+// returns string of the characters read
+std::string read_from_string_stream(std::stringstream &from_str, int length);
+
+// remove whitespaces from end of string
+void rtrim(std::string &s);
+
+// Sends part data to file based on user selection and weight
+int send_part_data_to_file
+        (std::ofstream &outFile, Part partArray[], int records, int selection, double weight);
+
+// Prints data items of part structure to output stream
 void print_part(std::ostream &os, Part part) {
     // Set precision
     os.setf(ios::fixed);
@@ -35,6 +62,7 @@ void print_part(std::ostream &os, Part part) {
             << "in stock" << endl;
 }
 
+//TODO desc
 void print_partlist(std::ostream &os, Partlist &pl) {
     PartNode *current;
     Part copy;
@@ -63,6 +91,9 @@ bool delete_part(string compare, Partlist &pl) {
     return false;
 
 }
+
+// output parts list to file(outfile_name[])
+void save_part_list(Partlist &parts, char outfile_name[]);
 
 // returns string with a set length of characters
 string get_string(string prompt, unsigned int length) {
