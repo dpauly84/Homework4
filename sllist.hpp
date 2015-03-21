@@ -1,3 +1,9 @@
+// File Name: sllist.hpp
+// Author: Derek Pauly
+// Student ID: s829f376
+// Assignment Number: 4
+// Last Changed: March 21, 2015
+
 #ifndef _SLLIST_HPP_
 #define _SLLIST_HPP_
 

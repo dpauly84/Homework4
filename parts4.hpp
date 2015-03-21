@@ -39,17 +39,14 @@ std::string read_from_string_stream(std::stringstream &from_str, int length);
 // remove whitespaces from end of string
 void rtrim(std::string &s);
 
-// Sends part data to file based on user selection and weight
-int send_part_data_to_file
-        (std::ofstream &outFile, Part partArray[], int records, int selection, double weight);
 
 // Prints data items of part structure to output stream
 void print_part(std::ostream &os, Part part);
 
-//TODO desc
+// Prints partlist to output stream
 void print_partlist(std::ostream &os, Partlist & pl);
 
-// delete part with matching part number from parts list
+// Prompts user for part number to delete and removes matching part from list (pl)
 bool delete_part(Partlist & pl);
 
 // output parts list to file(outfile_name[])
@@ -58,7 +55,7 @@ void save_part_list(Partlist &parts, char outfile_name[]);
 // returns string with a set length of characters
 std::string get_string(std::string prompt, unsigned int length);
 
-// TODO desc
+// Store part data from user input
 Part get_part_from_user();
 
 #endif

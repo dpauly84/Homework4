@@ -1,3 +1,9 @@
+// File Name: parts4.cpp
+// Author: Derek Pauly
+// Student ID: s829f376
+// Assignment Number: 4
+// Last Changed: March 21, 2015
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -100,13 +106,9 @@ void rtrim(std::string &s) {
     s.erase(s.find_last_not_of(" \n\r\t") + 1);
 }
 
-// Sends part data to file based on user selection and weight
-int send_part_data_to_file
-        (std::ofstream &outFile, Part partArray[], int records, int selection, double weight);
-
 // Prints data items of part structure to output stream
 void print_part(std::ostream &os, Part part) {
-    // Set precision
+    // Set output stream precision (decimal values to be shown)
     os.setf(ios::fixed);
     os.setf(ios::showpoint);
     os.precision(2);
@@ -119,7 +121,7 @@ void print_part(std::ostream &os, Part part) {
             << "in stock" << endl;
 }
 
-//TODO desc
+// Prints partlist to output stream
 void print_partlist(std::ostream &os, Partlist &pl) {
     PartNode *current;
     Part copy;
@@ -130,12 +132,12 @@ void print_partlist(std::ostream &os, Partlist &pl) {
     }
 }
 
-//TODO desc and variables
+// Prompts user for part number to delete and removes matching part from list (pl)
 bool delete_part(Partlist &pl) {
-    string compare;
+    string compare; // String value for part number comparison
     compare = get_string("\nEnter the part number of the part to delete: ", 7);
     PartNode *current;
-    Part copy;
+    Part copy; // Copy of part from Partlist (pl)
 
     for (current = pl.first(); current != pl.end(); current = pl.next(current)) {
         copy = pl.retrieve(current);
@@ -190,7 +192,7 @@ string get_string(string prompt, unsigned int length) {
     return returnString;
 }
 
-//TODO desc
+//Get part data from user input
 Part get_part_from_user() {
     Part addPart; // part to be added
     char tempName[17]; // temporary hold part name in c-string

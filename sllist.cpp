@@ -1,3 +1,9 @@
+// File Name: sllist.cpp
+// Author: Derek Pauly
+// Student ID: s829f376
+// Assignment Number: 4
+// Last Changed: March 21, 2015
+
 #include "sllist.hpp"
 #include <iostream>
 
