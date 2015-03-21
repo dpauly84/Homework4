@@ -60,6 +60,11 @@ void Partlist::add(Part part) {
     }
 }
 
+// returns true if list is empty
+bool Partlist::is_empty() {
+    return m_first == NULL ? true : false;
+}
+
 // create new element for the list with fields copied
 // from p and return pointer to created element
 PartNode *Partlist::make_copy(Part p) {

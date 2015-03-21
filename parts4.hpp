@@ -15,7 +15,7 @@ const int LINE_LENGTH = 45; // length of line from part file
 const int NAME_LENGTH = 17; // Max length of part name (pname) in part file
 
 const char *IN_FILENAME = // name of part input file to be read from
-        "part_data.txt";
+        "/home/shockerpc/ClionProjects/Homework4/part_data.txt";
 
 const std::string INSTRUCTIONS =
         "\nAvailable choices:\n"
@@ -25,7 +25,7 @@ const std::string INSTRUCTIONS =
                 "\t4. Quit\n";
 
 // Read part file and stores Part structure data into a Part array
-int get_part_data_from_file(std::ifstream &inFile, Partlist& p);
+bool get_part_data_from_file(std::ifstream &inFile, Partlist& p);
 
 // Sends string parameter line to a Stringstream
 // Extracts  and stores Part structure data from Stringstream
@@ -50,7 +50,7 @@ void print_part(std::ostream &os, Part part);
 void print_partlist(std::ostream &os, Partlist & pl);
 
 // delete part with matching part number from parts list
-bool delete_part(std::string compare, Partlist & pl);
+bool delete_part(Partlist & pl);
 
 // output parts list to file(outfile_name[])
 void save_part_list(Partlist &parts, char outfile_name[]);
@@ -58,11 +58,7 @@ void save_part_list(Partlist &parts, char outfile_name[]);
 // returns string with a set length of characters
 std::string get_string(std::string prompt, unsigned int length);
 
-
-
-
-
-
+// TODO desc
 Part get_part_from_user();
 
 #endif

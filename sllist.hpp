@@ -36,6 +36,10 @@ public:
     void remove(PartNode *current); // delete element pointed to by current from list
     void add(Part part); // add element made from part (by make_copy) to end of list
 
+// Other
+    // returns true if list is empty
+    bool is_empty();
+
 private:
 // helper functions
     PartNode *make_copy(Part p); // create new element for the list with fields copied
