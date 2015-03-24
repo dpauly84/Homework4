@@ -2,7 +2,10 @@
 // Author: Derek Pauly
 // Student ID: s829f376
 // Assignment Number: 4
-// Last Changed: March 21, 2015
+// Last Changed: March 24, 2015
+
+// Description: This program implements a singly linked list to manage part data to
+//     keep track of inventory for a manufacturer.
 
 #include <iostream>
 #include <fstream>
@@ -183,9 +186,7 @@ string get_string(string prompt, unsigned int length) {
             }
             cout << prompt;
             cin >> returnString;
-            if (returnString.length() == length) {
-                isValidString = true;
-            } else isValidString = false;
+            isValidString = returnString.length() == length;
         } while (!isValidString);
     } else exit(EXIT_FAILURE);
 

@@ -1,20 +1,25 @@
-//TODO Program Desc
-
 // File Name: sllist.cpp
 // Author: Derek Pauly
 // Student ID: s829f376
 // Assignment Number: 4
-// Last Changed: March 21, 2015
+// Last Changed: March 24, 2015
 
 #include "sllist.hpp"
 
+// Constructor
 Partlist::Partlist() {
     m_first = NULL;
     m_last = NULL;
 }
 
+// Destructor
 Partlist::~Partlist() {
-    //TODO soon
+    PartNode *tmp;
+    while (m_first != NULL) {
+        tmp = m_first;
+        m_first = m_first->next;
+        delete tmp;
+    }
 }
 
 // return pointer to first element of list

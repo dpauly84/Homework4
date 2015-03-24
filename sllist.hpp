@@ -2,7 +2,7 @@
 // Author: Derek Pauly
 // Student ID: s829f376
 // Assignment Number: 4
-// Last Changed: March 21, 2015
+// Last Changed: March 24, 2015
 
 #ifndef _SLLIST_HPP_
 #define _SLLIST_HPP_
@@ -10,6 +10,7 @@
 #include <string>
 #include <ostream>
 
+// Type definitions
 struct Part
 {
     std::string pname; // part name

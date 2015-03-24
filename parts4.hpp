@@ -2,7 +2,7 @@
 // Author: Derek Pauly
 // Student ID: s829f376
 // Assignment Number: 4
-// Last Changed: March 21, 2015
+// Last Changed: March 24, 2015
 
 #ifndef _PARTS4_HPP_
 #define _PARTS4_HPP_
@@ -15,7 +15,7 @@ const int LINE_LENGTH = 45; // length of line from part file
 const int NAME_LENGTH = 17; // Max length of part name (pname) in part file
 
 const char *IN_FILENAME = // name of part input file to be read from
-        "/home/shockerpc/ClionProjects/Homework4/part_data.txt";
+        "part_data.txt";
 
 const std::string INSTRUCTIONS =
         "\nAvailable choices:\n"
